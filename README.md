@@ -4,6 +4,7 @@
 ![MCU](https://img.shields.io/badge/MCU-MSPM0G3507-blue)
 ![Vision](https://img.shields.io/badge/Vision-K230-orange)
 ![License](https://img.shields.io/badge/license-AGPL--3.0-blueviolet)
+[![GitHub stars](https://img.shields.io/github/stars/AKO-J/2026-NUEDC-H-Ball-Beam-Car?style=social)](https://github.com/AKO-J/2026-NUEDC-H-Ball-Beam-Car/stargazers)
 
 > 2026 年全国大学生电子设计竞赛赛区赛暨 TI 杯模拟电子系统设计专题赛，H 题「车载平衡滚球运动控制系统」开源方案。最终获得赛区三等奖（省三）。
 
