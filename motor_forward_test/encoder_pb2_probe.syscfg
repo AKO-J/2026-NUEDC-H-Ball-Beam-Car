@@ -1,0 +1,15 @@
+/* Pin-map verification only: proposed replacement for E1A. */
+//@v2CliArgs --device "MSPM0G3507" --package "LQFP-64(PM)"
+// @cliArgs --board /ti/boards/LP_MSPM0G3507 --rtos nortos
+
+const GPIO = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const ENCODERS = GPIO.addInstance();
+
+ENCODERS.$name = "ENCODERS";
+ENCODERS.associatedPins.create(1);
+ENCODERS.associatedPins[0].direction = "INPUT";
+ENCODERS.associatedPins[0].$name = "MOTOR_A_ENC_A";
+ENCODERS.associatedPins[0].assignedPin = "2";
+ENCODERS.associatedPins[0].assignedPort = "PORTB";
+
+const Board = scripting.addModule("/ti/driverlib/Board", {}, false);

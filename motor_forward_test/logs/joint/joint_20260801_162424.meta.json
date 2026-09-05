@@ -1,0 +1,29 @@
+{
+  "accepted_rows": 484,
+  "ball_tolerance_cm": 1.0,
+  "baud": 115200,
+  "csv": "joint_20260801_162424.csv",
+  "rejected_rows": 1,
+  "schema": "joint_line_balance/v2",
+  "serial_port": "/dev/cu.usbmodemMG3500011",
+  "source_sha256": {
+    "ball_beam_controller.c": "29508d81b55ae7c5216c53e8e9dc39123fc60fefe6acc482fc4639190c8d8356",
+    "ball_beam_controller.h": "5ed4d6922d3cc236a68bc13160b3610b2cf342ed4f5ca4af8fd167598e9fe1db",
+    "beam_calibration.c": "b22115ee2292f68aa8291d9b18ef3c41662e362724e84e8c6403e38f45eab47d",
+    "diagnostic_uart.c": "e9b171623ef57e98bd0c5901a7dc69132d332c0069072c19ccfb9f424c0c96a2",
+    "diagnostic_uart.h": "7b2c177d62e50d540ad63bb785f8f7586ffb92cfff4524bb1ca747cde162ac2e",
+    "encoder.c": "b589a8a1a2c0c51412261c164e809f7a2407287e6be2a0aca69bb879da6c98be",
+    "icm42688.c": "04736693b1b54303f51ac37814279c5d857fc84bb1b003bf149b34f2e825be67",
+    "ir_line_sensor.c": "5394242048580ef3a54a7a5778b88ebc779750d0165610bc22d95b4adc0781ea",
+    "joint_line_balance_control.c": "5c94e66c94302196a02cd6d59eb0c7552e586a1f8843092cf7f68e5e4502c676",
+    "joint_line_balance_control.h": "c7df28901ed0e900210d1406f0120b27c6d17f3958426cab9bf38aa1f8c1dfe7",
+    "motor_driver.c": "b2621a1ba08abf96c01d9ae5118397538777f5bf08251a185c7057d2e2fad645",
+    "stepper_beam.c": "6b91fb6b4fd91e3c9242aea813e226f0addd5092e56ef061906c23b559fa4f47",
+    "tests/bringup/joint_line_balance_test.c": "2f89ae797e4904a8dc35c0d9a6080687ed09512335da78458b38f98f4505b9e5",
+    "vision_uart.c": "31e7462b711762af5d9e504df94b8a316fa677fa4b95045888469c5134ada81a"
+  },
+  "started_at": "2026-08-01T16:24:24+08:00",
+  "stopped_at": "2026-08-01T16:25:04+08:00",
+  "tuning_status": "unverified_no_automatic_changes",
+  "vision_role": "task3_pd_plus_acceleration_feedforward"
+}

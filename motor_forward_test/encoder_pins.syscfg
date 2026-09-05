@@ -1,0 +1,36 @@
+/**
+ * Pin record for the first encoder test.
+ *
+ * Motor pins remain owned by motor_driver.c.  These four inputs are only for
+ * the wheel encoders and deliberately avoid every motor-control GPIO.
+ */
+//@v2CliArgs --device "MSPM0G3507" --package "LQFP-64(PM)"
+// @cliArgs --board /ti/boards/LP_MSPM0G3507 --rtos nortos
+
+const GPIO = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const ENCODERS = GPIO.addInstance();
+
+ENCODERS.$name = "ENCODERS";
+ENCODERS.associatedPins.create(4);
+
+ENCODERS.associatedPins[0].direction = "INPUT";
+ENCODERS.associatedPins[0].$name = "MOTOR_A_ENC_A";
+ENCODERS.associatedPins[0].assignedPin = "2";
+ENCODERS.associatedPins[0].assignedPort = "PORTB";
+
+ENCODERS.associatedPins[1].direction = "INPUT";
+ENCODERS.associatedPins[1].$name = "MOTOR_A_ENC_B";
+ENCODERS.associatedPins[1].assignedPin = "24";
+ENCODERS.associatedPins[1].assignedPort = "PORTB";
+
+ENCODERS.associatedPins[2].direction = "INPUT";
+ENCODERS.associatedPins[2].$name = "MOTOR_B_ENC_A";
+ENCODERS.associatedPins[2].assignedPin = "9";
+ENCODERS.associatedPins[2].assignedPort = "PORTB";
+
+ENCODERS.associatedPins[3].direction = "INPUT";
+ENCODERS.associatedPins[3].$name = "MOTOR_B_ENC_B";
+ENCODERS.associatedPins[3].assignedPin = "27";
+ENCODERS.associatedPins[3].assignedPort = "PORTA";
+
+const Board = scripting.addModule("/ti/driverlib/Board", {}, false);

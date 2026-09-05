@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1980" viewBox="0 0 1800 1980">
+  <style>
+    .title{font:700 42px 'Songti SC','Noto Serif SC',serif;fill:#12263a}.sub{font:600 26px 'Songti SC','Noto Serif SC',serif;fill:#12263a}.txt{font:22px 'Songti SC','Noto Serif SC',serif;fill:#182a36}.small{font:18px 'Songti SC','Noto Serif SC',serif;fill:#182a36}.tiny{font:16px 'Songti SC','Noto Serif SC',serif;fill:#182a36}.pin{font:700 19px 'Menlo',monospace;fill:#12263a}.box{fill:#fff;stroke:#36556a;stroke-width:3}.mcu{fill:#eaf4ff;stroke:#196ca3;stroke-width:5}.power{stroke:#d64545;stroke-width:5;fill:none}.gnd{stroke:#30343b;stroke-width:4;fill:none}.sig{stroke:#2367a2;stroke-width:4;fill:none}.sensor{stroke:#16816b;stroke-width:4;fill:none}.warn{fill:#fff3e2;stroke:#df7d20;stroke-width:3}.note{fill:#fff8cf;stroke:#ba9919;stroke-width:2}.line{stroke:#90a4ae;stroke-width:2}.dash{stroke-dasharray:9 7}.head{fill:#dcebf5}.danger{font:700 19px 'Songti SC','Noto Serif SC',serif;fill:#b42318}.ok{font:700 18px 'Songti SC','Noto Serif SC',serif;fill:#08735d}</style>
+  <rect width="1800" height="1980" fill="#f8fbfd"/>
+  <text x="900" y="62" text-anchor="middle" class="title">SMART CAR 维修用详细接线图（MSPM0G3507 / TB6612 / X42S / K230）</text>
+  <text x="900" y="100" text-anchor="middle" class="small">版本 2026-08-04　·　依据：H_TASK_1_40引脚总表、系统整合与现场操作指南、当前统一固件源码</text>
+  <rect x="70" y="125" width="1660" height="70" rx="10" class="warn"/>
+  <text x="100" y="156" class="danger">维修前强制断电：</text><text x="310" y="156" class="txt">断开 TB6612 VM / 12 V 电机电源；USB 仅用于逻辑检查。绝不把 12 V 接入 MSPM0、K230、OLED、ICM 或任意 GPIO。</text>
+  <text x="100" y="184" class="small">线型：<tspan fill="#d64545">红色=电源</tspan>　<tspan fill="#30343b">黑色=地</tspan>　<tspan fill="#2367a2">蓝色=数字/控制信号</tspan>　<tspan fill="#16816b">绿色=传感器信号</tspan>　橙色框=现场确认/禁止项</text>
+
+  <!-- MSPM0 central controller -->
+  <rect x="630" y="260" width="540" height="1120" rx="24" class="mcu"/>
+  <rect x="630" y="260" width="540" height="84" rx="24" fill="#196ca3"/>
+  <text x="900" y="314" text-anchor="middle" style="font:700 30px 'Songti SC','Noto Serif SC',serif;fill:white">LP‑MSPM0G3507 主控与 40 针排针</text>
+  <text x="662" y="385" class="sub">输入 / 传感器</text>
+  <text x="665" y="426" class="pin">PB18 [25]  ← LF04 O1</text>
+  <text x="665" y="462" class="pin">PA24 [27]  ← LF04 O2</text>
+  <text x="665" y="498" class="pin">PA17 [28]  ← LF04 O3</text>
+  <text x="665" y="534" class="pin">PA12 [32]  ← LF04 O4</text>
+  <text x="665" y="582" class="pin">PB2  [9]   ← 左编码器 E1A</text>
+  <text x="665" y="618" class="pin">PB24 [6]   ← 左编码器 E1B</text>
+  <text x="665" y="654" class="pin">PB9  [7]   ← 右编码器 E2A</text>
+  <text x="665" y="690" class="pin">PA27 [8]   ← 右编码器 E2B</text>
+  <text x="665" y="738" class="pin">PA13 [31]  ← K230 IO5 / UART2_TX</text>
+  <text x="665" y="774" class="small">UART3 RX，921600 baud，单向</text>
+  <text x="665" y="822" class="pin">PA28 [38]  ← ICM SDA</text>
+  <text x="665" y="858" class="pin">PA31 [37]  ← ICM SCL</text>
+  <line x1="660" y1="882" x2="1140" y2="882" class="line"/>
+  <text x="662" y="925" class="sub">按键（另一端全部接 GND [22]）</text>
+  <text x="665" y="962" class="pin">PB7 [14] S1：确认 / 急停</text>
+  <text x="665" y="998" class="pin">PB8 [15] S2：第二题 / 调平↓</text>
+  <text x="665" y="1034" class="pin">PB15[17] S3：第三题 / 调平↑</text>
+  <text x="665" y="1070" class="pin">PB0 [12] S4：第4/5/6问</text>
+  <text x="665" y="1106" class="pin">PB20     S5：保留；物理针位需现场核板</text>
+  <line x1="660" y1="1130" x2="1140" y2="1130" class="line"/>
+  <text x="662" y="1172" class="sub">输出 / 显示 / 执行</text>
+  <text x="665" y="1208" class="pin">PB4 [40] / PB1 [39] → TB6612 PWMA/PWMB</text>
+  <text x="665" y="1242" class="pin">PA8[4] PB17[18] PB23[3] PA25[2] → 方向</text>
+  <text x="665" y="1276" class="pin">PB13[35] PB12[19] PB6[13] → X42S Stp/Dir/En</text>
+  <text x="665" y="1310" class="pin">PB19[23] / PA15[30] → OLED SCL/SDA</text>
+  <text x="665" y="1344" class="ok">3V3 [1]　GND [22]：所有低压模块共参考地</text>
+
+  <!-- LF04 -->
+  <rect x="90" y="280" width="410" height="290" rx="18" class="box"/>
+  <rect x="90" y="280" width="410" height="52" rx="18" class="head"/>
+  <text x="295" y="315" text-anchor="middle" class="sub">LF04 四路红外循迹模块</text>
+  <text x="115" y="365" class="txt">VCC → 3V3 [1]；GND → GND [22]</text>
+  <text x="115" y="400" class="txt">O1 → PB18 [25]　 O2 → PA24 [27]</text>
+  <text x="115" y="435" class="txt">O3 → PA17 [28]　 O4 → PA12 [32]</text>
+  <text x="115" y="472" class="danger">必须 3.3 V 供电；5 V 输出不得直连 GPIO</text>
+  <text x="115" y="510" class="small">物理探头从左至右：O4 → O1（勿按线色猜测）</text>
+  <path d="M500 400 H630" class="sensor"/><text x="520" y="390" class="tiny">O1–O4</text>
+
+  <!-- encoders -->
+  <rect x="90" y="650" width="410" height="260" rx="18" class="box"/>
+  <rect x="90" y="650" width="410" height="52" rx="18" class="head"/>
+  <text x="295" y="685" text-anchor="middle" class="sub">左右轮编码器（正交 A/B）</text>
+  <text x="115" y="738" class="txt">左：E1A → PB2 [9]；E1B → PB24 [6]</text>
+  <text x="115" y="775" class="txt">右：E2A → PB9 [7]；E2B → PA27 [8]</text>
+  <text x="115" y="815" class="txt">GND → GND [22]</text>
+  <text x="115" y="854" class="danger">VCC 与输出电平须按编码器型号确认 ≤3.3 V</text>
+  <text x="115" y="885" class="small">维修检查：轮转动时 A/B 均有跳变；勿交换左右端口</text>
+  <path d="M500 760 H630" class="sensor"/><text x="520" y="750" class="tiny">E1A/E1B/E2A/E2B</text>
+
+  <!-- K230 -->
+  <rect x="90" y="990" width="410" height="270" rx="18" class="box"/>
+  <rect x="90" y="990" width="410" height="52" rx="18" class="head"/>
+  <text x="295" y="1025" text-anchor="middle" class="sub">K230 视觉模块（钢球坐标）</text>
+  <text x="115" y="1080" class="txt">IO5 / UART2_TX → PA13 [31] / UART3_RX</text>
+  <text x="115" y="1118" class="txt">GND → GND [22]；921600，8N1，单向</text>
+  <text x="115" y="1156" class="danger">不要接 MSP TX → K230 RX：PB12 已用于 X42S DIR</text>
+  <text x="115" y="1194" class="small">K230 电源按板卡丝印及降压模块确认，不能直接接 12 V</text>
+  <text x="115" y="1228" class="small">维修检查：先看 GND、IO5、串口帧，再检查算法/ROI</text>
+  <path d="M500 1100 H630" class="sig"/><text x="510" y="1090" class="tiny">UART RX</text>
+
+  <!-- buttons -->
+  <rect x="90" y="1340" width="410" height="230" rx="18" class="box"/>
+  <rect x="90" y="1340" width="410" height="52" rx="18" class="head"/>
+  <text x="295" y="1375" text-anchor="middle" class="sub">五键面板（低有效，内部上拉）</text>
+  <text x="115" y="1428" class="txt">S1 PB7[14]　S2 PB8[15]　S3 PB15[17]</text>
+  <text x="115" y="1465" class="txt">S4 PB0[12]　S5 PB20（需核实物针位）</text>
+  <text x="115" y="1502" class="txt">每个常开按键：GPIO ── 按键 ── GND [22]</text>
+  <text x="115" y="1538" class="danger">不得把按键另一端接 3V3；S1 运行中为急停</text>
+  <path d="M500 1450 H630" class="sig"/>
+
+  <!-- TB6612 -->
+  <rect x="1300" y="280" width="410" height="430" rx="18" class="box"/>
+  <rect x="1300" y="280" width="410" height="52" rx="18" class="head"/>
+  <text x="1505" y="315" text-anchor="middle" class="sub">TB6612FNG 双直流电机驱动</text>
+  <text x="1325" y="365" class="txt">逻辑：VCC→3V3[1]；STBY→3V3[1]</text>
+  <text x="1325" y="397" class="txt">GND→GND[22]；VM→电池电机电源</text>
+  <text x="1325" y="433" class="txt">左桥：PWMA←PB4[40]；AIN1←PA8[4]</text>
+  <text x="1325" y="465" class="txt">AIN2←PB17[18]</text>
+  <text x="1325" y="501" class="txt">右桥：PWMB←PB1[39]；BIN1←PB23[3]</text>
+  <text x="1325" y="533" class="txt">BIN2←PA25[2]；J14 默认 1–2</text>
+  <text x="1325" y="568" class="txt">A01/A02→左电机；B01/B02→右电机</text>
+  <text x="1325" y="603" class="danger">烧录/维修时：VM 必须断开或车轮悬空</text>
+  <text x="1325" y="635" class="danger">电机线绝不接电池端、Vout+/− 或 MCU</text>
+  <text x="1325" y="670" class="small">首检：先逻辑电源、确认 STBY=3V3</text>
+  <text x="1325" y="694" class="small">后接 VM，车轮悬空低速检查</text>
+  <path d="M1170 1220 H1260 V410 H1300" class="sig"/>
+  <path d="M1260 620 H1300" class="power"/><text x="1245" y="610" class="tiny">12 V VM</text>
+
+  <!-- X42S -->
+  <rect x="1300" y="800" width="410" height="350" rx="18" class="box"/>
+  <rect x="1300" y="800" width="410" height="52" rx="18" class="head"/>
+  <text x="1505" y="835" text-anchor="middle" class="sub">X42S 闭环步进驱动 / 摆杆</text>
+  <text x="1325" y="888" class="txt">COM → 3V3[1]（共阳光耦输入）</text>
+  <text x="1325" y="926" class="txt">Stp ← PB13[35]；Dir ← PB12[19]</text>
+  <text x="1325" y="958" class="txt">En ← PB6[13]</text>
+  <text x="1325" y="988" class="txt">V+ / GND → 12 V 电机电源端</text>
+  <text x="1325" y="1025" class="danger">COM 不接 X42S 电机电源 GND</text>
+  <text x="1325" y="1055" class="danger">信号空闲均为高；PB13 不能接 OLED</text>
+  <text x="1325" y="1088" class="danger">严禁用 TB6612 驱动步进</text>
+  <text x="1325" y="1122" class="small">无机械原点开关：上电后人工调平</text>
+  <path d="M1170 1276 H1235 V925 H1300" class="sig"/>
+  <path d="M1260 1060 H1300" class="power"/><text x="1245" y="1050" class="tiny">12 V V+</text>
+
+  <!-- OLED + ICM -->
+  <rect x="1300" y="1240" width="410" height="330" rx="18" class="box"/>
+  <rect x="1300" y="1240" width="410" height="52" rx="18" class="head"/>
+  <text x="1505" y="1275" text-anchor="middle" class="sub">SSD1306 OLED 与 ICM42688</text>
+  <text x="1325" y="1325" class="txt">OLED：VCC→3V3[1]；GND→GND[22]</text>
+  <text x="1325" y="1362" class="txt">SCL←PB19[23]；SDA←PA15[30]</text>
+  <text x="1325" y="1400" class="danger">OLED 严禁接 PA18（BSL）</text>
+  <text x="1325" y="1430" class="danger">或 PB13（X42S Stp）</text>
+  <text x="1325" y="1463" class="txt">ICM：VCC→3V3[1]；GND→GND[22]</text>
+  <text x="1325" y="1494" class="txt">SDA→PA28[38]；SCL→PA31[37]</text>
+  <text x="1325" y="1523" class="small">CS→3V3；AD0→GND</text>
+  <text x="1325" y="1547" class="small">与 OLED 不共用 I2C</text>
+  <path d="M1170 1310 H1300" class="sig"/>
+
+  <!-- Power area -->
+  <rect x="80" y="1640" width="1640" height="250" rx="18" class="warn"/>
+  <text x="110" y="1690" class="sub">维修电源与地线检查（先完成，再上电）</text>
+  <path d="M160 1745 H490" class="power"/><text x="160" y="1725" class="txt">12 V 电池（电机支路）</text>
+  <rect x="490" y="1718" width="145" height="54" rx="8" fill="#fff" stroke="#d64545" stroke-width="3"/><text x="562" y="1754" text-anchor="middle" class="small">保险 / 开关</text>
+  <path d="M635 1745 H840" class="power"/><path d="M840 1745 V1720 H1110" class="power"/><path d="M840 1745 V1780 H1110" class="power"/>
+  <text x="1120" y="1725" class="txt">TB6612 VM（车轮）</text><text x="1120" y="1790" class="txt">X42S V+ / GND（摆杆）</text>
+  <path d="M170 1840 H1620" class="gnd"/><text x="170" y="1820" class="txt">低压逻辑公共 GND：MSPM0 / TB6612 逻辑 / LF04 / OLED / ICM / K230 信号地</text>
+  <text x="170" y="1875" class="danger">注意：X42S 的 COM 是 3V3 共阳光耦端，不按普通“COM=地”接法处理；请以 X42S 端子丝印复核后再接。</text>
+
+  <!-- footer -->
+  <text x="900" y="1935" text-anchor="middle" class="small">禁止占用：PA18[26]（BSL）、PA10[34]/PA11[33]（XDS110 UART/ROM‑BSL）、PA19/PA20（SWD）、NRST[16]；5V[21] 不给 3.3V 外设或 GPIO 使用。</text>
+  <text x="900" y="1965" text-anchor="middle" class="tiny">本图仅覆盖当前资料已经确认的连接。发现模块丝印、供电电压或线束颜色与本图不一致时：保持断电，按模块规格书与实物排针重新核对，不凭经验改接。</text>
+</svg>

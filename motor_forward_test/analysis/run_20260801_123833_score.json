@@ -1,0 +1,31 @@
+{
+  "configuration_version": "2b579ce1a9db14c3",
+  "estimated_dropped_frames": 0,
+  "lost_ratio": 0.0,
+  "max_data_age_ms": 60,
+  "mean_data_age_ms": 10.412757973733584,
+  "metadata": "logs/run_20260801_123833.meta.json",
+  "metrics": {
+    "active_duration_s": 0.0,
+    "active_samples": 0,
+    "control_output_peak_mdeg": null,
+    "fault_states": [],
+    "maximum_overshoot_px": null,
+    "motor_execution_observed": false,
+    "oscillation_reversals": null,
+    "position_iae_px_s": null,
+    "setpoint_transition": "not_present",
+    "settling_time_s": null,
+    "steady_state_error_px": null,
+    "test_score_eligible": false,
+    "test_score_reason": "diagnostic only: needs >=3 s ACTIVE motor execution with no safety fault",
+    "tuning_eligible": false,
+    "vision_max_interval_ms": 167,
+    "vision_mean_period_ms": 88.0422932330827,
+    "vision_min_interval_ms": 32
+  },
+  "schema": "ball_beam_test_score/v1",
+  "source_csv": "logs/run_20260801_123833.csv",
+  "tuning_eligible": false,
+  "tuning_lock_reason": "Hardware safety validation has not been recorded; automatic PID editing is disabled."
+}

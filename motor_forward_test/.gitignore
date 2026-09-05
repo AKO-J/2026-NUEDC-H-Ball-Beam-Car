@@ -1,0 +1,16 @@
+# Local compiler and programmer output
+build/
+*.o
+*.out
+*.map
+*.bin
+*_bsl.txt
+
+# Host/editor operating-system state
+.DS_Store
+tempCodeRunnerFile
+tempCodeRunnerFile.cpp
+.venv/
+
+# Generated Word snapshots; the source Markdown remains versioned.
+*.docx

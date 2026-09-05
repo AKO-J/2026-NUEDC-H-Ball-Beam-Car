@@ -1,0 +1,41 @@
+/*
+ * Yahboom YB-MVX05-V1.0 eight-channel grey sensor.
+ *
+ * The sensor is a 74HC4051-style multiplexer: AD0..AD2 select X1..X8 and
+ * OUT returns the selected digital result. This record uses free pins exposed
+ * on the LaunchPad's 40-pin header, avoiding all existing motor/encoder pins.
+ */
+//@v2CliArgs --device "MSPM0G3507" --package "LQFP-64(PM)"
+// @cliArgs --board /ti/boards/LP_MSPM0G3507 --rtos nortos
+
+const GPIO = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const GREY_SENSOR = GPIO.addInstance();
+
+GREY_SENSOR.$name = "GREY_SENSOR";
+GREY_SENSOR.associatedPins.create(4);
+
+GREY_SENSOR.associatedPins[0].direction = "OUTPUT";
+GREY_SENSOR.associatedPins[0].$name = "GRAY_AD0";
+GREY_SENSOR.associatedPins[0].assignedPort = "PORTA";
+GREY_SENSOR.associatedPins[0].assignedPin = "10";
+GREY_SENSOR.associatedPins[0].pin.$assign = "PA10";
+
+GREY_SENSOR.associatedPins[1].direction = "OUTPUT";
+GREY_SENSOR.associatedPins[1].$name = "GRAY_AD1";
+GREY_SENSOR.associatedPins[1].assignedPort = "PORTA";
+GREY_SENSOR.associatedPins[1].assignedPin = "11";
+GREY_SENSOR.associatedPins[1].pin.$assign = "PA11";
+
+GREY_SENSOR.associatedPins[2].direction = "OUTPUT";
+GREY_SENSOR.associatedPins[2].$name = "GRAY_AD2";
+GREY_SENSOR.associatedPins[2].assignedPort = "PORTA";
+GREY_SENSOR.associatedPins[2].assignedPin = "12";
+GREY_SENSOR.associatedPins[2].pin.$assign = "PA12";
+
+GREY_SENSOR.associatedPins[3].direction = "INPUT";
+GREY_SENSOR.associatedPins[3].$name = "GRAY_OUT";
+GREY_SENSOR.associatedPins[3].assignedPort = "PORTA";
+GREY_SENSOR.associatedPins[3].assignedPin = "17";
+GREY_SENSOR.associatedPins[3].pin.$assign = "PA17";
+
+const Board = scripting.addModule("/ti/driverlib/Board", {}, false);

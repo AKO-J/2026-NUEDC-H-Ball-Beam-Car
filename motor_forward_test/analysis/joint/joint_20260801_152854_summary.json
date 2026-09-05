@@ -1,0 +1,19 @@
+{
+  "schema": "joint_line_balance_analysis/v1",
+  "csv": "joint_20260801_152854.csv",
+  "active_samples": 0,
+  "run_ids": [],
+  "max_abs_ball_error_cm": 0.0,
+  "ball_within_1cm": false,
+  "vision_stale_samples": 0,
+  "fault_samples": 0,
+  "pwm_saturation_samples": 0,
+  "ready_samples": 765,
+  "ready_max_abs_ball_error_cm": 10.56,
+  "ready_final_1s_max_abs_ball_error_cm": 0.3,
+  "ready_final_1s_within_1cm": true,
+  "ready_pd_min_mdeg": -400,
+  "ready_pd_max_mdeg": 400,
+  "ready_vision_stale_samples": 0,
+  "ready_fault_samples": 0
+}

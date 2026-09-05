@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectSpec>
+    <applicability>
+        <when>
+            <context deviceFamily="ARM" deviceId="MSPM0G3507"/>
+        </when>
+    </applicability>
+    <project
+        title="h_task2_line_follow"
+        name="h_task2_line_follow_LP_MSPM0G3507_nortos_ticlang"
+        configurations="Debug"
+        toolChain="TICLANG"
+        connection="TIXDS110_Connection.xml"
+        device="MSPM0G3507"
+        ignoreDefaultDeviceSettings="false"
+        ignoreDefaultCCSSettings="true"
+        products="MSPM0-SDK"
+        compilerBuildOptions="
+            -I${PROJECT_ROOT}
+            -D__MSPM0G3507__
+            -O2
+            -I${COM_TI_MSPM0_SDK_INSTALL_DIR}/source/third_party/CMSIS/Core/Include
+            -I${COM_TI_MSPM0_SDK_INSTALL_DIR}/source
+            -mcpu=cortex-m0plus
+            -march=thumbv6m
+            -mfloat-abi=soft
+            -mthumb
+            -Wall
+        "
+        linkerBuildOptions="
+            -l${COM_TI_MSPM0_SDK_INSTALL_DIR}/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a
+            -L${COM_TI_MSPM0_SDK_INSTALL_DIR}/source
+            -L${PROJECT_ROOT}
+            -Wl,--rom_model
+            -Wl,--warn_sections
+            -L${CG_TOOL_ROOT}/lib
+            -llibc.a
+        "
+        sourceLookupPath="${COM_TI_MSPM0_SDK_INSTALL_DIR}/source/ti/driverlib"
+        description="H task 2 LF04 line following with calibrated encoder-distance stop; waits for PB7">
+        <property name="buildProfile" value="release"/>
+        <property name="isHybrid" value="true"/>
+        <file path="../h_track_task2.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../h_track_controller.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../h_track_controller.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../h_track_finish.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../h_track_finish.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../h_track_pwm_config.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../speed_matcher.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../speed_matcher.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../ir_line_sensor.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../ir_line_sensor.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../ssd1306_oled.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../ssd1306_oled.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../icm42688.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../icm42688.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../imu_yaw.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../imu_yaw.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../motor_driver.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../motor_driver.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../encoder.c" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+        <file path="../encoder.h" openOnCreation="false" excludeFromBuild="false" action="copy"/>
+        <file path="../H_TASK_1_40引脚总表.md" openOnCreation="true" excludeFromBuild="false" action="copy"/>
+    </project>
+</projectSpec>

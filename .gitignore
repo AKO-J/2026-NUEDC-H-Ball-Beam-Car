@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# 本机原始包含有现场 Wi-Fi 配置，仅保留在本机，不提交 GitHub。
+releases/SMARTCAR_final_core_20260905.zip
+releases/SMARTCAR_final_core_20260905.zip.sha256

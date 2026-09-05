@@ -1,0 +1,25 @@
+source_csv=logs/run_20260801_123833.csv
+rows=1066
+duration_s=53.250
+lost_samples=0
+lost_ratio=0.0000
+estimated_dropped_frames=0
+max_data_age_ms=60
+mean_data_age_ms=10.41
+configuration_version=2b579ce1a9db14c3
+active_samples=0
+active_duration_s=0.000
+motor_execution_observed=False
+fault_states=none
+maximum_overshoot_px=N/A
+settling_time_s=N/A
+steady_state_error_px=N/A
+oscillation_reversals=N/A
+position_iae_px_s=N/A
+control_output_peak_mdeg=N/A
+vision_mean_period_ms=88.04
+vision_max_interval_ms=167
+test_score_eligible=False
+tuning_eligible=false
+test_score_reason=diagnostic only: needs >=3 s ACTIVE motor execution with no safety fault
+plot=analysis/run_20260801_123833_analysis.png
